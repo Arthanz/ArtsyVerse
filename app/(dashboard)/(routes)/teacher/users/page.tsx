@@ -3,7 +3,6 @@ import { columns } from "./_components/columns";
 import { db } from "@/lib/db";
 
 const UsersPage = async () => {
-  // Fetch user data from API or database
   const userData = await db.profile.findMany();
 
   return (

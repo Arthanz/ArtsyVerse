@@ -3,8 +3,6 @@ import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
 
-
-// Trying to replicate Shadcn's Component Styling System
 const backgroundVariants = cva(
   "rounded-full flex items-center justify-center",
   {

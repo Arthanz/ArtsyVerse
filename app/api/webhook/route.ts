@@ -1,6 +1,4 @@
-// This file handles webhook events from Stripe. It verifies the signature
-// of each request to ensure that the request is coming from Stripe. It also
-// handles the checkout.session.completed event type by creating a new purchase record in the database.
+
 import Stripe from "stripe";
 import { headers } from "next/headers";
 import { NextResponse } from "next/server";

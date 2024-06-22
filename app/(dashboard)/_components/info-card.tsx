@@ -1,6 +1,6 @@
 import React from 'react';
 import { IconBadge } from '@/components/icon-badge';
-import { Icon } from 'next/dist/lib/metadata/types/metadata-types';
+// import { Icon } from 'next/dist/lib/metadata/types/metadata-types';
 import { LucideIcon } from 'lucide-react';
  
 interface InfoCardProps {

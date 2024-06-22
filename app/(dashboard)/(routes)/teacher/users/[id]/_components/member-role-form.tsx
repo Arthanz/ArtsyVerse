@@ -67,7 +67,6 @@ export const MemberRoleForm = ({
     }
   }
 
-  // Check if the course already has a selected option.
   const selectedOption = options.find(option => option.value === initialData.role);
 
   return (

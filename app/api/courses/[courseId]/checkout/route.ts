@@ -10,14 +10,6 @@ export async function POST(
 ) {
     try {
 
-        // We are creating a customer but we don't know when their payment 
-        // method will be charged. We need to create a customer in Stripe
-        // and then create a session for them to pay for the course.
-
-        // The metadata is used to identify the user and the course they are
-        // purchasing. We will use this information in the webhook to update
-        // the database.
-
         const user = await currentUser();   
 
         if (!user || !user.id || !user.emailAddresses?.[0]?.emailAddress) {
@@ -48,7 +40,6 @@ export async function POST(
             return new NextResponse("Not Found", { status: 404 });
         }   
 
-        // define line items for stripe check out page.
         const lineItems: Stripe.Checkout.SessionCreateParams.LineItem[] = [
             {
                 price_data: {

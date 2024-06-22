@@ -41,21 +41,19 @@ const CreatePage = () => {
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
         try {
 
-          //toast.success(`Course ${values.title} created successfully`);
           const response = await axios.post("/api/courses", values);
 
           router.push(`/teacher/courses/${response.data.id}`);
           
         } catch (error : any) {
           if (error.response) {
-            // The request was made and the server responded with a status code
-            // that falls out of the range of 2xx
+
             toast.error(`Server responded with ${error.response.status} error`);
           } else if (error.request) {
-            // The request was made but no response was received
+
             toast.error("No response received from server");
           } else {
-            // Something happened in setting up the request that triggered an Error
+
             toast.error(`Error: ${error.message}`);
           }
         }
@@ -68,8 +66,7 @@ const CreatePage = () => {
                 </h1>
 
                 <p className="text-sm text-slate-600">
-                    What would you like to name your course? Don&apos;t worry, you 
-                    can change this later.
+                    What would you like to name your course? 
                 </p>
                 <Form { ...form } >
                     <form 
@@ -88,7 +85,7 @@ const CreatePage = () => {
                                         <Input
                                             disabled={isSubmitting}
                                             placeholder="e.g. 'Advanced web development'"
-                                            { ...field } // spread the field props
+                                            { ...field } 
                                         />
                                     </FormControl>
                                     <FormDescription>
